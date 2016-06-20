@@ -12,6 +12,7 @@ import javax.servlet.AsyncContext;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,7 +47,9 @@ public class SellServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final AsyncContext asyncron = request.startAsync();
-		asyncron.start(new FotoService(asyncron));		
+			
+		ServletInputStream inputstream = request.getInputStream();
+		inputstream.setReadListener(new FotoReadListener(asyncron));
 	}
 	
 	protected long PermitedFileSize() throws IOException{
