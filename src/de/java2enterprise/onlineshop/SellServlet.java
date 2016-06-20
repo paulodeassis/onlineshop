@@ -21,7 +21,8 @@ import javax.servlet.http.Part;
 /**
  * Servlet implementation class SellServlet
  */
-@WebServlet("/sell")
+@WebServlet( urlPatterns="/sell", 
+			 asyncSupported=true)
 @MultipartConfig(
 		maxFileSize=1024*1024*10,
 		maxRequestSize=1024*1024*30,
