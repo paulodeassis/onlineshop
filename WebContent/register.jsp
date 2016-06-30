@@ -6,10 +6,14 @@
 				<tbody>
 					<tr>
 						<th>
-							<label for="emal"></label>
+							<label for="emal">Email</label>
 						</th>
 						<td>
-							<input type="email" name="email" size="40" maxlength="40" title="muster@beispiel.de" placeholder="E-Mail eingeben" pattern=".{6,40}" required="required">
+							<!--<jsp:useBean id="customer" class="de.java2enterprise.onlineshop.model.Customer"></jsp:useBean>-->
+							
+							<!-- for input -->
+							<!-- value='<jsp:getProperty property="email" name="customer"/>' -->
+							<input type="email" name="email" size="40" maxlength="40" title="muster@beispiel.de" placeholder="E-Mail eingeben" pattern=".{6,40}" required="required" >
 						</td>
 					</tr>
 					<tr>

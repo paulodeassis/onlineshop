@@ -2,6 +2,7 @@ package de.java2enterprise.onlineshop;
 
 import java.io.IOException;
 
+import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -14,8 +15,8 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter(
 		urlPatterns={"/sell", "/buy"},
 		filterName="LoggingFilter",
-		description="Logging bei bestimmten Zugriffen"
-		)
+		description="Logging bei bestimmten Zugriffen",
+		dispatcherTypes=DispatcherType.FORWARD)
 public class LoggingFilter implements Filter {
 
 	public void destroy() {

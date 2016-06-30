@@ -1,4 +1,5 @@
 <%@ include file="header.jspf" %>
+<%@ page import="de.java2enterprise.onlineshop.model.*" %>
 	<form action="signin" method="post">
 		<fieldset>
 			<legend>Einloggen</legend>

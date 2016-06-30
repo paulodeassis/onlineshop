@@ -26,8 +26,10 @@ public void run(){
 	PrintWriter out = null;
 	
 	try{
+		
 		final Part part = request.getPart("foto");
-		outputstream = new FileOutputStream(part.getSubmittedFileName());
+		String novaURL="C:\\tmp\\"+ part.getName();
+		outputstream = new FileOutputStream(novaURL);
 		inputstream = part.getInputStream();
 		
 		byte[] buffer  = new byte[1024];
